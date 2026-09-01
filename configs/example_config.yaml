@@ -1,0 +1,27 @@
+# Illustrative model/channel configuration for examples/minimal_demo.py.
+#
+# These architecture dimensions (base_channels, latent_dim, num_blocks) and
+# the fixed N=16 symbol budget match the manuscript. The seeds, optimizer
+# settings, SNR grid, and bootstrap protocol used to produce the
+# manuscript's reported numbers are NOT reproduced by this minimal release
+# -- this file only configures the runnable demo.
+
+model:
+  num_leads: 12
+  signal_length: 1000       # 10s at 100Hz
+  base_channels: 16
+  latent_dim: 32             # d=32 per-lead embedding
+  num_blocks: 3
+  num_classes: 5             # NORM, MI, STTC, CD, HYP
+  classifier_hidden_dim: null
+  dropout: 0.1
+
+lead_selection:
+  k: 1                       # number of transmitted leads (paper's headline operating point)
+
+channel:
+  # m * r must equal 16 (the fixed per-lead symbol budget)
+  m: 4
+  r: 4
+  snr_db: 0.0
+  channel_type: awgn         # "awgn" or "rayleigh"
