@@ -20,10 +20,5 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
----
-
-This license covers the code in this repository only. It does not cover the
-PTB-XL dataset, which is not included in this repository and is distributed
-separately by PhysioNet under its own license -- see
-https://physionet.org/content/ptb-xl/ for the terms that apply to PTB-XL
-itself.
+Dataset licenses are provided by their respective PhysioNet repositories.
+Bundled fonts retain their own license in code/fonts/LICENSE.

@@ -1,0 +1,22 @@
+# Phase 2B K=1/AWGN three-seed confirmatory run: seed=2.
+# Identical to configs/phase2b_pilot.yaml (seed=0) except seed, for
+# comparability across training seeds.
+seed: 2
+embeddings_dir: outputs/phase2a/embeddings
+d: 32
+snr_grid_db: [-5, 0, 5, 10, 15, 20]
+
+model:
+  classifier_hidden_dim: null
+  dropout: 0.1
+
+train:
+  batch_size: 64
+  num_epochs: 40
+  lr: 0.001
+  weight_decay: 0.0001
+  device: cuda
+  early_stopping_patience: 8
+
+eval:
+  threshold: 0.5

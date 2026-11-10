@@ -1,0 +1,40 @@
+{
+  "rule": "max seed-mean fold-9 macro-AUROC; ties -> AUPRC -> lexicographic",
+  "backbone": "new",
+  "locked": {
+    "1": [
+      "V6"
+    ],
+    "3": [
+      "aVF",
+      "V2",
+      "V5"
+    ],
+    "6": [
+      "I",
+      "II",
+      "III",
+      "V1",
+      "V2",
+      "V5"
+    ]
+  },
+  "locked_idx": {
+    "1": [
+      11
+    ],
+    "3": [
+      5,
+      7,
+      10
+    ],
+    "6": [
+      0,
+      1,
+      2,
+      6,
+      7,
+      10
+    ]
+  }
+}

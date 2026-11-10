@@ -1,0 +1,611 @@
+{
+  "created_utc": "2026-11-04T08:07:23.123298+00:00",
+  "git_head": "51637d62575bc01f589f3a7585d695f17c9c01d2",
+  "git_note": "revision_audit/ is untracked at lock time; every script and artifact below is pinned by sha256",
+  "fold10_status": "PTB-XL fold 10 was used once by the original submission. This is an evaluation of the locked revision protocol on the original held-out test fold.",
+  "seeds": {
+    "selector_backbone_comm": [
+      0,
+      1,
+      2
+    ],
+    "gate_locked": [
+      0,
+      3,
+      5
+    ],
+    "gate_selection_rule": "fold-9 (gate_eq - margin) at 50% rank-matched > 0 for both CD and STTC AUPRC (6 -> 3); see revision_audit/gate_lock/gate_lock.json",
+    "gate_sensitivity_all_six": "seeds 0-5 also evaluated on fold 10, reported as a pre-specified sensitivity analysis of the selection"
+  },
+  "frozen_choices": {
+    "new_backbone_best_fixed_lead": {
+      "rule": "max seed-mean fold-9 K=1 macro-AUROC of separately trained fixed-lead heads; ties -> AUPRC -> lead order",
+      "locked_best_lead": "V6",
+      "ranking_new": [
+        {
+          "lead": "V6",
+          "auroc_mean": 0.8744255926575747,
+          "auprc_mean": 0.704408335266499,
+          "auroc_per_seed": [
+            0.8752644877122554,
+            0.8722224288771487,
+            0.8757898613833198
+          ]
+        },
+        {
+          "lead": "V5",
+          "auroc_mean": 0.8707600124380964,
+          "auprc_mean": 0.7094297911940778,
+          "auroc_per_seed": [
+            0.873922479291941,
+            0.8673700066580343,
+            0.8709875513643137
+          ]
+        },
+        {
+          "lead": "aVR",
+          "auroc_mean": 0.8578925474461929,
+          "auprc_mean": 0.6629988822380222,
+          "auroc_per_seed": [
+            0.8588827490499327,
+            0.8590414660938016,
+            0.8557534271948445
+          ]
+        },
+        {
+          "lead": "II",
+          "auroc_mean": 0.8558974518969144,
+          "auprc_mean": 0.6726420564189565,
+          "auroc_per_seed": [
+            0.8591106426855845,
+            0.8515533006084695,
+            0.8570284123966893
+          ]
+        },
+        {
+          "lead": "V4",
+          "auroc_mean": 0.8403204745697561,
+          "auprc_mean": 0.6427006015012678,
+          "auroc_per_seed": [
+            0.8435553755025385,
+            0.8364667314757448,
+            0.8409393167309849
+          ]
+        },
+        {
+          "lead": "I",
+          "auroc_mean": 0.8273423847834174,
+          "auprc_mean": 0.6252981184197187,
+          "auroc_per_seed": [
+            0.8255243749142711,
+            0.8259270045626896,
+            0.8305757748732912
+          ]
+        },
+        {
+          "lead": "aVF",
+          "auroc_mean": 0.8172751467107758,
+          "auprc_mean": 0.6086419091989111,
+          "auroc_per_seed": [
+            0.8172657919151824,
+            0.8141638555635928,
+            0.8203957926535521
+          ]
+        },
+        {
+          "lead": "V3",
+          "auroc_mean": 0.8080090939964935,
+          "auprc_mean": 0.6029678018444277,
+          "auroc_per_seed": [
+            0.8069271839851344,
+            0.8054455438398257,
+            0.8116545541645201
+          ]
+        },
+        {
+          "lead": "V1",
+          "auroc_mean": 0.8004060977540145,
+          "auprc_mean": 0.5913191261435958,
+          "auroc_per_seed": [
+            0.8013997999311402,
+            0.797949779020069,
+            0.8018687143108343
+          ]
+        },
+        {
+          "lead": "V2",
+          "auroc_mean": 0.7893531624498816,
+          "auprc_mean": 0.5772890960215541,
+          "auroc_per_seed": [
+            0.788170115922247,
+            0.7875765029654209,
+            0.7923128684619771
+          ]
+        },
+        {
+          "lead": "aVL",
+          "auroc_mean": 0.7880825038476541,
+          "auprc_mean": 0.5665719869111198,
+          "auroc_per_seed": [
+            0.7872215172886964,
+            0.7847569128416911,
+            0.792269081412575
+          ]
+        },
+        {
+          "lead": "III",
+          "auroc_mean": 0.7793615051031901,
+          "auprc_mean": 0.5557982913556468,
+          "auroc_per_seed": [
+            0.7773831328682075,
+            0.7786863938301456,
+            0.7820149886112171
+          ]
+        }
+      ],
+      "ranking_orig_descriptive": [
+        {
+          "lead": "V5",
+          "auroc_mean": 0.8409418731769064,
+          "auprc_mean": 0.662552495845513,
+          "auroc_per_seed": [
+            0.8407794068697468,
+            0.8414239352195441,
+            0.8406222774414284
+          ]
+        },
+        {
+          "lead": "V6",
+          "auroc_mean": 0.82965745026236,
+          "auprc_mean": 0.6377012198236949,
+          "auroc_per_seed": [
+            0.82911650061664,
+            0.8307986731843799,
+            0.8290571769860602
+          ]
+        },
+        {
+          "lead": "II",
+          "auroc_mean": 0.8274969634125653,
+          "auprc_mean": 0.6260763309961351,
+          "auroc_per_seed": [
+            0.8277443278614133,
+            0.8271198707298554,
+            0.8276266916464271
+          ]
+        },
+        {
+          "lead": "V4",
+          "auroc_mean": 0.8147674071196261,
+          "auprc_mean": 0.5990755915930107,
+          "auroc_per_seed": [
+            0.8148705346984325,
+            0.8153674300231961,
+            0.8140642566372499
+          ]
+        },
+        {
+          "lead": "I",
+          "auroc_mean": 0.8011065943458515,
+          "auprc_mean": 0.5914283141440282,
+          "auroc_per_seed": [
+            0.8015063252978699,
+            0.8009268227090247,
+            0.8008866350306599
+          ]
+        },
+        {
+          "lead": "aVF",
+          "auroc_mean": 0.7810787518313558,
+          "auprc_mean": 0.5611964627846101,
+          "auroc_per_seed": [
+            0.7809965951898814,
+            0.7816117384011683,
+            0.7806279219030177
+          ]
+        },
+        {
+          "lead": "V3",
+          "auroc_mean": 0.7629299783176444,
+          "auprc_mean": 0.5411546517491942,
+          "auroc_per_seed": [
+            0.7612124041190366,
+            0.7611885564237767,
+            0.7663889744101201
+          ]
+        },
+        {
+          "lead": "V2",
+          "auroc_mean": 0.7475808048907419,
+          "auprc_mean": 0.5082277753487131,
+          "auroc_per_seed": [
+            0.7470486642556876,
+            0.7481134323127593,
+            0.7475803181037787
+          ]
+        },
+        {
+          "lead": "aVR",
+          "auroc_mean": 0.7343473233763285,
+          "auprc_mean": 0.47123769770308166,
+          "auroc_per_seed": [
+            0.7370880362737646,
+            0.73383021648506,
+            0.7321237173701608
+          ]
+        },
+        {
+          "lead": "aVL",
+          "auroc_mean": 0.7191814634662407,
+          "auprc_mean": 0.4628836485340703,
+          "auroc_per_seed": [
+            0.7201824348963397,
+            0.7198961036021799,
+            0.7174658519002023
+          ]
+        },
+        {
+          "lead": "V1",
+          "auroc_mean": 0.713595848907716,
+          "auprc_mean": 0.4781572097722863,
+          "auroc_per_seed": [
+            0.7140363752302242,
+            0.7158959088612885,
+            0.7108552626316351
+          ]
+        },
+        {
+          "lead": "III",
+          "auroc_mean": 0.6793520505825912,
+          "auprc_mean": 0.43186476278430935,
+          "auroc_per_seed": [
+            0.6802143177951995,
+            0.6761493581671421,
+            0.6816924757854321
+          ]
+        }
+      ],
+      "note": "V5 stays the pre-locked reference lead (chosen on the original backbone); this backbone's own best is reported separately"
+    },
+    "subsets": {
+      "orig": {
+        "1": [
+          "V5"
+        ],
+        "3": [
+          "aVF",
+          "V1",
+          "V5"
+        ],
+        "6": [
+          "I",
+          "aVR",
+          "aVF",
+          "V1",
+          "V2",
+          "V5"
+        ]
+      },
+      "new": {
+        "1": [
+          "V6"
+        ],
+        "3": [
+          "aVF",
+          "V2",
+          "V5"
+        ],
+        "6": [
+          "I",
+          "II",
+          "III",
+          "V1",
+          "V2",
+          "V5"
+        ]
+      }
+    },
+    "thresholds": "revision_audit/thresholds/frozen_thresholds.json (Youden J on fold 9, ties -> lowest threshold)",
+    "comm_policies": "revision_audit/comm/locked_comm_policies.json (fold 9; submitted rep_orig policies unchanged)",
+    "external_label_map": "revision_audit/external_ecgarr/label_map_frozen.json",
+    "temperature_scaling": "one scalar T per (model, seed) fitted on fold 9 by BCE; per-class Platt exploratory"
+  },
+  "primary_and_secondary": {
+    "primary": "PTB-XL fold 10, original backbone, K=1: proposed selector + head (orig_A) minus matched fixed-V5 head (orig_C), macro-AUROC; seeds 0-2; shared patient-level paired bootstrap (2000, rng 20261110), per-seed difference then mean",
+    "key_secondary_holm": [
+      "orig_A - orig_C macro-AUPRC",
+      "CD AUROC",
+      "CD AUPRC",
+      "STTC AUROC",
+      "STTC AUPRC"
+    ],
+    "multiplicity": "Holm-Bonferroni over the 5 key secondary endpoints using two-sided bootstrap p-values; every other comparison is exploratory with unadjusted 95% intervals and no significance claim",
+    "external_primary": "ecg-arrhythmia v1.0.0: orig_A - orig_C for CD and STTC-partial AUROC/AUPRC, record-level bootstrap (no patient identifier); reported separately from PTB-XL"
+  },
+  "exploratory": [
+    "orig_A - orig_B (same head, lead swapped); orig_B - orig_C; orig_A vs fixed II and global ranking",
+    "revision backbone: 12-lead performance vs original architecture; new_A vs new_C / new_BEST / new_II / new_GL; new_A - orig_A (whole-model comparison)",
+    "K=3/K=6 enumerated best fixed subset vs clinical subset vs random per-record vs selector choice (same subset-agnostic receiver), both backbones",
+    "K=1 label-assisted oracle (mean BCE primary statistic)",
+    "frozen development-set operating points: TP/FP/TN/FN, sensitivity, specificity with intervals",
+    "temperature scaling and Platt (exploratory) calibration; descriptive subgroups (sex, age bins)",
+    "gate (seeds 0,3,5): 50% rank-matched quota vs margin and vs matched random; frozen-threshold execution and actual switch rate; all-six-seed sensitivity",
+    "communication: rep_orig (submitted), rep_ctrl, SSCC (5 configs + lookup), JSCC ctrl, JSCC e2e; AWGN, block Rayleigh perfect CSI, block Rayleigh LS-2 pilots; locked policies vs best fixed",
+    "external: orig_A - orig_B and orig_B - orig_C. The gate is NOT evaluated externally: its training target (mean BCE gain over all five PTB-XL classes) is not interpretable when only CD and STTC-partial are mapped (decided before any external model output)"
+  ],
+  "outputs": [
+    "revision_audit/formal_eval/results/k1_eval_test.json",
+    "revision_audit/subset_enum/results/subset_enum_{orig,new}_test.json",
+    "revision_audit/gate_lock/results/test/",
+    "revision_audit/comm/results/comm_eval_test_seed*.json",
+    "revision_audit/comm/results/comm_report_test.json",
+    "revision_audit/external_ecgarr/results/external_eval.json",
+    "revision_audit/backbone/results/backbone_test.json",
+    "revision_audit/clinical/results/selection_heatmap_test.json"
+  ],
+  "software_error_rule": "if a software error that affects a conclusion is found after this lock, the pre-correction result is kept and reported next to the corrected one with the fixing change; nothing is tuned on fold 10 or external results",
+  "artifacts_sha256": {
+    "encoder_and_norm": {
+      "outputs/runs/baseline_run1/checkpoints/best.pt": "02731a58c4533ea62cd74f87c9ac7e9a4b5ccf6d560a73fecd5c67b9cfbea273",
+      "outputs/norm_stats.npz": "e88a71e122f29655ff0057f18ec6c6ca1e54805aa6b44a42d37b3626a946fdae"
+    },
+    "phase2a": {
+      "outputs/runs/phase2a_ceiling_k12_seed0/checkpoints/best.pt": "efdc32f725677ac57e2edc5d4c69990102a866c05eed264a6a05c7e6e0ff06bb",
+      "outputs/runs/phase2a_ceiling_k12_seed1/checkpoints/best.pt": "572bd85a7b5b8d0191e3e41049c4cb968a97ecb75fde2bf4dcfc9a9879427b03",
+      "outputs/runs/phase2a_ceiling_k12_seed2/checkpoints/best.pt": "8812a01d9dfb2c6e74e40767d9445d35bda4d1e88bc78661e9aff8476e33306c",
+      "outputs/runs/phase2a_fixed_clinical_k_seed0/checkpoints/best.pt": "0a6f91c18fe1f838ed5c2b9c77f445140dd14f03b7edae22f49341830a6c3aaa",
+      "outputs/runs/phase2a_fixed_clinical_k_seed1/checkpoints/best.pt": "9031ac8d0c29c8808f543356197d1751bfec7103a1ec86660f2a9019c6fbd119",
+      "outputs/runs/phase2a_fixed_clinical_k_seed2/checkpoints/best.pt": "40ec7a844a937ce4b41ae140cced43277cb12e16fd3cb17d8b1df2a934f8a392",
+      "outputs/runs/phase2a_global_learned_k_seed0/checkpoints/best.pt": "b4ebda6fd6c58f7876f4eae090c6b2bd68c55a0b82a0df13a864e68d64401da3",
+      "outputs/runs/phase2a_global_learned_k_seed1/checkpoints/best.pt": "adc059b3678dd638ef018b99dc5faf884e4ea927c8e640c09f148b4a9c41a9d9",
+      "outputs/runs/phase2a_global_learned_k_seed2/checkpoints/best.pt": "77eee1271538368286c49d169ea2e50bace5827cec535ac03c33d1110d17677c",
+      "outputs/runs/phase2a_proposed_seed0/checkpoints/best.pt": "a3a1c847f9926ffcf3ce80638fa20d6cfe0a4d15ea63a91b097aff58f387bcda",
+      "outputs/runs/phase2a_proposed_seed1/checkpoints/best.pt": "5bedfb1a2f650b785685754bd5e6a6a08a7b8a3566c85fcf2009fb123377577a",
+      "outputs/runs/phase2a_proposed_seed2/checkpoints/best.pt": "5fd50a8cd9e6c13c87b0cdb87df9a215c616b8ea9e74721447017eb2c42bfb0f",
+      "outputs/runs/phase2a_random_k_seed0/checkpoints/best.pt": "e169e6d4598eb79408ee6f7a3fdcfde56ee3aedc14c2f8dac5ed544a12a745f2",
+      "outputs/runs/phase2a_random_k_seed1/checkpoints/best.pt": "17b598ca07e0af8ecf8814deeec608bbead54971d9ac0a6894ed7ac62d36e813",
+      "outputs/runs/phase2a_random_k_seed2/checkpoints/best.pt": "048b390c5721b9e8b5eb842a66907929ea47480c87e48d3ef4fbfafb4fbab0b3"
+    },
+    "fixed_v5": {
+      "revision_audit/fixed_v5/outputs/runs/fixed_k1V5_seed0/checkpoints/best.pt": "2e64bbe32025e9193c35318e082abd37c7ab91c4aa3c806219bb971e40780015",
+      "revision_audit/fixed_v5/outputs/runs/fixed_k1V5_seed1/checkpoints/best.pt": "670b8af77b0b7392c196da6db9cf916a3c2cc089017683fd515f2b6371fe6420",
+      "revision_audit/fixed_v5/outputs/runs/fixed_k1V5_seed2/checkpoints/best.pt": "0976a1fd43f45004ccedea54cd44ac60622757c35056c5a5ca916b94be7825b2"
+    },
+    "phase2a_extra_seeds": {
+      "revision_audit/k1_gate_pilot/phase2a_extra_seeds/runs/phase2a_proposed_seed3/checkpoints/best.pt": "7b69b91b59f5da988bd6be461efba2d21fc335e7f7ecd1627ba9559c1c3625ef",
+      "revision_audit/k1_gate_pilot/phase2a_extra_seeds/runs/phase2a_proposed_seed4/checkpoints/best.pt": "59d06f21d1d8841dd035527a4f95674599d6ebe92a7f3f8faa4a6732c6d6c2f8",
+      "revision_audit/k1_gate_pilot/phase2a_extra_seeds/runs/phase2a_proposed_seed5/checkpoints/best.pt": "494ce874477a22364f408fdc1f40f38ef0fb9f3af8cf90ff4e8c968b6be3cca9"
+    },
+    "gate_lock": {
+      "revision_audit/gate_lock/gate_lock.json": "4e59bdcde9ac42ee7060c1651ae63492eaa9223d8c474a29b36f563afb8214d1",
+      "revision_audit/gate_lock/gate_seed0.npz": "3d4d5c72e2efab2f88b3be60ce0cf77ee6bfe5060536561ab29c01f22b583278",
+      "revision_audit/gate_lock/gate_seed3.npz": "fd89be377ec5571ffa49e2d7b1a725ca5e1404ddc3b986c8f05e1032841be242",
+      "revision_audit/gate_lock/gate_seed5.npz": "975279eaff9ac68a6caa4cd45d3860a915f67762c48e7931216e43db5e6e712f"
+    },
+    "phase2b": {
+      "outputs/runs/phase2b_pilot_k1_awgn_seed0/checkpoints/best.pt": "f97c0b0367846f6c0270f0c267bf8aedaf1614612f8dc3bff3ed5145e8998f8c",
+      "outputs/runs/phase2b_pilot_k1_awgn_seed1/checkpoints/best.pt": "98f496cf1bcce177474a309d5e6b3fa96153f4daa95fed40fa0a2993513d4601",
+      "outputs/runs/phase2b_pilot_k1_awgn_seed2/checkpoints/best.pt": "356bc782c7dbdc72c6eb80d4387ba1c128eeefe6200d40982b7f34d41f4404ee"
+    },
+    "comm_models": {
+      "revision_audit/comm/runs/jscc_ctrl_seed0/best.pt": "382d895b50dde455f9fa4fccc8ab7e36420eb2244600d49cb386d2ceeab53bc0",
+      "revision_audit/comm/runs/jscc_ctrl_seed1/best.pt": "cacd36f324814e49d6df04a7b1e1cf9c3d7caf9922cc5f7d4c4e5a31e7f28c86",
+      "revision_audit/comm/runs/jscc_ctrl_seed2/best.pt": "a846a04291130ba2f817a32de5d6b0b8300b97995066996063dfbeae812f2d07",
+      "revision_audit/comm/runs/jscc_e2e_seed0/best.pt": "f07b9ea384303fc53ecb0745a3ad34b260468a34b975970830ec6221cff5277b",
+      "revision_audit/comm/runs/jscc_e2e_seed1/best.pt": "eef512ed66bfd6321c431545121ad54e80237463c7eb19534bd95f8b2b76f630",
+      "revision_audit/comm/runs/jscc_e2e_seed2/best.pt": "cdbc683adbedad300b107f72f008c042359ddb17a4233dd130306e473c234882",
+      "revision_audit/comm/runs/rep_ctrl_seed0/best.pt": "ca6a75b80640ce0ad8213bc9e9983490bcacbe66a9ed9a9ae8c3307de7170f81",
+      "revision_audit/comm/runs/rep_ctrl_seed1/best.pt": "b68ca90d30c57262d1f3eaa6c95b6725c287aca5763e1d135eda7f4e287b3ee8",
+      "revision_audit/comm/runs/rep_ctrl_seed2/best.pt": "dfb359fa41e71a55abf1ef61873427d338428b4f4fa4afb5ff59acf85f733217",
+      "revision_audit/comm/runs/sscc_heads_seed0/codec_S16_RM2_QPSK.pkl": "fb549b6a1c6cf52e4657cd40b85a625d5f35bb81681817e4893d70824a2ec585",
+      "revision_audit/comm/runs/sscc_heads_seed0/codec_S32_RM2_16QAM.pkl": "3da6c1e19a78f10be53a573af952c6a666cdb978f0af8f63aa824844d020fade",
+      "revision_audit/comm/runs/sscc_heads_seed0/codec_S32_UNC_QPSK.pkl": "455ec16462fe35d8acf0c5b2781bc6e05b69820dbcd7fd7323a0c50f3ce7a09c",
+      "revision_audit/comm/runs/sscc_heads_seed0/codec_S64_UNC_16QAM.pkl": "03df0b3ae7a1f78ab3ea87d6109a46476c36429d042c5e1a206c375cdd5d0ce2",
+      "revision_audit/comm/runs/sscc_heads_seed0/codec_S6_RM1_QPSK.pkl": "408368d0e0f5b43dd92610df74d146681aeabe844eb3c584ba4fc9ff17ac576f",
+      "revision_audit/comm/runs/sscc_heads_seed0/head_S16_RM2_QPSK.pt": "3b5899f4b08a4341bed89d1daa036be7010e6445c89b44442b05273f702305b6",
+      "revision_audit/comm/runs/sscc_heads_seed0/head_S32_RM2_16QAM.pt": "733c0e8f2d1e3a14a29a48999ad786cf6d5d342aed27e32906717c10f3ce3fd1",
+      "revision_audit/comm/runs/sscc_heads_seed0/head_S32_UNC_QPSK.pt": "ef419c43ad7ec234d69030c1d26718bb011ea6d165e9d31e0b4ad34c0a576e5f",
+      "revision_audit/comm/runs/sscc_heads_seed0/head_S64_UNC_16QAM.pt": "b1b71a5a66b42eef1b231a2b6eb2b1c4c73aaf252071d21244678b5b3c6e9410",
+      "revision_audit/comm/runs/sscc_heads_seed0/head_S6_RM1_QPSK.pt": "2e8b7c88d007e8dffeed3d2b8c825b3ffd32a2badca7f0dc82fb8ec37bfc27fa",
+      "revision_audit/comm/runs/sscc_heads_seed1/codec_S16_RM2_QPSK.pkl": "b387808365fd136779a0d8ac1ad6fbbfa889e02e94f237b5bdac6b9405142bfe",
+      "revision_audit/comm/runs/sscc_heads_seed1/codec_S32_RM2_16QAM.pkl": "1f0bbb9a893f2fd0474497570b6d33fa40f936bb0312149974f7611b896a82a3",
+      "revision_audit/comm/runs/sscc_heads_seed1/codec_S32_UNC_QPSK.pkl": "231c17213392cf39539df56d8bff6b18ad7d1b7b495ac481d3d870e131d21509",
+      "revision_audit/comm/runs/sscc_heads_seed1/codec_S64_UNC_16QAM.pkl": "c806b75ccb93805162a7933cd02efa5f3f6d36fc7dc6eb5084199039e3283cfd",
+      "revision_audit/comm/runs/sscc_heads_seed1/codec_S6_RM1_QPSK.pkl": "4f6dfb1bf9f99f1da8d414acd5c2257bd4dec9773d43a1973a4e9c0193253cc6",
+      "revision_audit/comm/runs/sscc_heads_seed1/head_S16_RM2_QPSK.pt": "162037043ada144d499f846d9ff966a493f9b1a51b13d0b714ad09aed2cb5049",
+      "revision_audit/comm/runs/sscc_heads_seed1/head_S32_RM2_16QAM.pt": "24fa5e73b3e4e9363bf7e50a4cedac9c32d753f5b26accaf7485ebe3999a5f17",
+      "revision_audit/comm/runs/sscc_heads_seed1/head_S32_UNC_QPSK.pt": "4c71065e798df2df7759043498bb544e6bbb899c02909070d00f9d50e4dac7a5",
+      "revision_audit/comm/runs/sscc_heads_seed1/head_S64_UNC_16QAM.pt": "75b527f6ba577e8fb0c6a691eab33d658810a8f6fb84eb4082ec5f17f4bf48be",
+      "revision_audit/comm/runs/sscc_heads_seed1/head_S6_RM1_QPSK.pt": "73662882d149d80c61aa7a0971aa5e1580fd9838d03dcf7d302d109626887cae",
+      "revision_audit/comm/runs/sscc_heads_seed2/codec_S16_RM2_QPSK.pkl": "3bf38959026205b9a2901fd06f7f7827035680c77890924136bb81397e94c46b",
+      "revision_audit/comm/runs/sscc_heads_seed2/codec_S32_RM2_16QAM.pkl": "631f35617195c28edbca306a6516ade7b54fcd0b2a3bedf317b116dfb337dab1",
+      "revision_audit/comm/runs/sscc_heads_seed2/codec_S32_UNC_QPSK.pkl": "9b6e5d7d818cf94bec866e9708f427932d98a0cb8e168592d296213e10ebfa0c",
+      "revision_audit/comm/runs/sscc_heads_seed2/codec_S64_UNC_16QAM.pkl": "1df94dd119572d886ddd54599e7362eb03b4f830f3e4060de3d99e8b4ef1a2cc",
+      "revision_audit/comm/runs/sscc_heads_seed2/codec_S6_RM1_QPSK.pkl": "465290c026156b11c51a1fe32f125749c62e7be5b8a2bdab8a50af7ca94e0de7",
+      "revision_audit/comm/runs/sscc_heads_seed2/head_S16_RM2_QPSK.pt": "1763c74c75f900aa5fea9ea2395c2e29dc90172d402d06d4c0dbf6a7503e9d6c",
+      "revision_audit/comm/runs/sscc_heads_seed2/head_S32_RM2_16QAM.pt": "85422ecde0a35a902641ef5bbbb5de4dbdba5a4cfebe21775b65049db82beceb",
+      "revision_audit/comm/runs/sscc_heads_seed2/head_S32_UNC_QPSK.pt": "5e8df58ade1139ed887a5bcd24452ae749b496ff45f39db6268509b993c8f4fc",
+      "revision_audit/comm/runs/sscc_heads_seed2/head_S64_UNC_16QAM.pt": "5fe14f228fac3bf3bc84ef0579683d0a47af44be799751b5262a94bd5883ae3f",
+      "revision_audit/comm/runs/sscc_heads_seed2/head_S6_RM1_QPSK.pt": "96be8ed758c7a5eca9252c1c7e912c5ba983f9e91a868341ab602096f92817fd",
+      "revision_audit/comm/locked_comm_policies.json": "d15f60d548a74d1b6fe85f0b9ae172ce789587c6d5139fbf5324a25e426c4068"
+    },
+    "revision_backbone": {
+      "revision_audit/backbone/runs/new_seed0/best.pt": "fa4b25f0a0b54c34da05fc0fd97817d63d2058bf2f9091d5ba86e4638b8b7b0f",
+      "revision_audit/backbone/runs/new_seed1/best.pt": "cd8ec43aa7ee569bde24167e93e73700627fd528ceed6eec7e6c764643d29700",
+      "revision_audit/backbone/runs/new_seed2/best.pt": "21e1729778598bd93d0ebea11448ec726273b2189a32d8a7bff71bf8b80e1ec1",
+      "revision_audit/backbone/runs/orig_seed0/best.pt": "7abe980f2db7ffcc51ace55aea75b49777a67960012bee4aa7aabd3b92e3a71a",
+      "revision_audit/backbone/runs/orig_seed1/best.pt": "5c8c88fbfda80457a128ef37b34e52b6f852927a096c46051bc62b2e39f3ea8a",
+      "revision_audit/backbone/runs/orig_seed2/best.pt": "2551da71be362fdf32330d13471a4c7408f8f4836ae30a5b6da84d0d69d24e33"
+    },
+    "k1_fair_heads": {
+      "revision_audit/k1_fair/runs/new_s0_fixed_lead_III_seed0/best.pt": "52fb283c8c93304a48e967fa3d3b42e07c1463477b6ab77e4856e56bc76b2eb1",
+      "revision_audit/k1_fair/runs/new_s0_fixed_lead_II_seed0/best.pt": "8f3fe8393c61fc1a8dedc1561fc4cc3c8fa2b02b6710a9ed1ae0563206493fab",
+      "revision_audit/k1_fair/runs/new_s0_fixed_lead_I_seed0/best.pt": "753585a30f21aca791fb38d7772359cbe554cd495003195fb455d33dd62206de",
+      "revision_audit/k1_fair/runs/new_s0_fixed_lead_V1_seed0/best.pt": "b9bc5e4a1ca60f0f5bba214baa6741dc8e2f7be52e7c58dcf0e5f5d8fea240f9",
+      "revision_audit/k1_fair/runs/new_s0_fixed_lead_V2_seed0/best.pt": "5c2e431018a7136c4d97e25d2369083512442c5475d532c98f3500ad3d2e6b0c",
+      "revision_audit/k1_fair/runs/new_s0_fixed_lead_V3_seed0/best.pt": "0356a009d16590eecd17f7fdab5a255a6e6c0f4cd88ba6ee96e2a4f7fa360f70",
+      "revision_audit/k1_fair/runs/new_s0_fixed_lead_V4_seed0/best.pt": "7c0324d83616dbfd0078f3cbc2b907b4ab7013d36983a61d645055a7d7e89327",
+      "revision_audit/k1_fair/runs/new_s0_fixed_lead_V5_seed0/best.pt": "e1f19ed1aab7ed83576069c8819d9993b4cf17aa27d869053bd4e50307a0a7e9",
+      "revision_audit/k1_fair/runs/new_s0_fixed_lead_V6_seed0/best.pt": "705d22153a9dbcb93f218e7e7c1b7474527458e8f5602b1a584645def151c9a5",
+      "revision_audit/k1_fair/runs/new_s0_fixed_lead_aVF_seed0/best.pt": "0b44a529afe61e9fb81b18babc2e27540705032dde06497ee29d235661ca81dc",
+      "revision_audit/k1_fair/runs/new_s0_fixed_lead_aVL_seed0/best.pt": "353c2a7d0b8c0d6803269ba6d88fbae12d598b0bd82d0a1722f0fbe7dd114f9f",
+      "revision_audit/k1_fair/runs/new_s0_fixed_lead_aVR_seed0/best.pt": "2410b3d064b90514797da6585696c698a9ad45fe76c673cc30582bbafb4579ef",
+      "revision_audit/k1_fair/runs/new_s0_global_learned_k_seed0/best.pt": "e8787409682a2927379d11a2935800c02a9dd644d3364d038245128f0ea34a7f",
+      "revision_audit/k1_fair/runs/new_s0_proposed_seed0/best.pt": "b156cf35e86d6f3ddd1b623a829132abf4e11194369155084ae3b079de8c8382",
+      "revision_audit/k1_fair/runs/new_s0_random_k_seed0/best.pt": "ef9d3f1e60a8683bdd9b2959acd12bc53e47a860db5f17f5eff6f5659aa8d3d8",
+      "revision_audit/k1_fair/runs/new_s1_fixed_lead_III_seed1/best.pt": "f70bf9e94446cb21888ee1a1d40256d446547f46017c21210f82d5319ddc1df6",
+      "revision_audit/k1_fair/runs/new_s1_fixed_lead_II_seed1/best.pt": "70891ab2f345747a12daf6d1921002be3e54302299c16409f502a103037ef188",
+      "revision_audit/k1_fair/runs/new_s1_fixed_lead_I_seed1/best.pt": "58e3db7f294afbb829ad271b4b63de3ebca07204e481faf8483152280c8724e1",
+      "revision_audit/k1_fair/runs/new_s1_fixed_lead_V1_seed1/best.pt": "572b7f09415005cc506a527ec3b6d631bee63d74d7acb563aa392f9efbd61e13",
+      "revision_audit/k1_fair/runs/new_s1_fixed_lead_V2_seed1/best.pt": "8f1ff046b35ef0a4463dc381294ede55de2a6a93448da230a6cdac65f52e7692",
+      "revision_audit/k1_fair/runs/new_s1_fixed_lead_V3_seed1/best.pt": "017387d2b08438a13397b5da6ecada485434ff41da6602071f49d9e525b630f9",
+      "revision_audit/k1_fair/runs/new_s1_fixed_lead_V4_seed1/best.pt": "6dd8f05aca3a07ff519e879019b88657027c6e0d4ff39914ff6451490a2a9e57",
+      "revision_audit/k1_fair/runs/new_s1_fixed_lead_V5_seed1/best.pt": "2271f9b5bf18ca855deb5baee8ffee128a7224cbdb9e8b3587b9d1ca6ede94ea",
+      "revision_audit/k1_fair/runs/new_s1_fixed_lead_V6_seed1/best.pt": "21ecd0845671e577a6425011e14b87d123feb103f926b2a833056a015974d75a",
+      "revision_audit/k1_fair/runs/new_s1_fixed_lead_aVF_seed1/best.pt": "a527b4f4b44b34005708b90e8e64073e04c6f86d3ba87d5b4c8207535457ead5",
+      "revision_audit/k1_fair/runs/new_s1_fixed_lead_aVL_seed1/best.pt": "b3438afbbd9dc59ae877443b81d7b8cbf5ff57a7fedac925a7e4482e36c910ab",
+      "revision_audit/k1_fair/runs/new_s1_fixed_lead_aVR_seed1/best.pt": "32cd52435db0b84643d4330113da0682a9a5fde822bf00104ab72aefa879da55",
+      "revision_audit/k1_fair/runs/new_s1_global_learned_k_seed1/best.pt": "c8f603acba074ba0e112b52203b6bdeb2246af3a86612a9c21a1dc87e628a760",
+      "revision_audit/k1_fair/runs/new_s1_proposed_seed1/best.pt": "c1575556d15dfc2050c7836eae7520a1c6c9ce21ecf2d578c9a634b83c2a32d9",
+      "revision_audit/k1_fair/runs/new_s1_random_k_seed1/best.pt": "e885e0956fd22a59e808207a32dc59870578a77fe8c1359adf3958eb3fb11063",
+      "revision_audit/k1_fair/runs/new_s2_fixed_lead_III_seed2/best.pt": "86b9f9820d563411b8a163d18952650e177286545422c042da478ae31052c1df",
+      "revision_audit/k1_fair/runs/new_s2_fixed_lead_II_seed2/best.pt": "a845b496aff2c4a8cf39298fb980086060a09ffe53e652421ac39a4251f046a5",
+      "revision_audit/k1_fair/runs/new_s2_fixed_lead_I_seed2/best.pt": "231bf179528263f17efa93f0564e0053381bfc888bb681407a24f37787803eee",
+      "revision_audit/k1_fair/runs/new_s2_fixed_lead_V1_seed2/best.pt": "7d76753b95440daba76365bd9613dc4afbb8e09c92d3103449a217253b04b0e4",
+      "revision_audit/k1_fair/runs/new_s2_fixed_lead_V2_seed2/best.pt": "d9c65ddeb24269e3605569751344f61e31e809825f9f505a80590a7270a52ec8",
+      "revision_audit/k1_fair/runs/new_s2_fixed_lead_V3_seed2/best.pt": "b25a1ed74c839fa125a7c8bc4b5ba7ef30b0634ff4a97b2d9ea290fcdee8a144",
+      "revision_audit/k1_fair/runs/new_s2_fixed_lead_V4_seed2/best.pt": "798fa681e910985b0758c1cd07dd04551bfbd380c817f1a5684f6167b413c6a6",
+      "revision_audit/k1_fair/runs/new_s2_fixed_lead_V5_seed2/best.pt": "c20a21d8571a3986ba1c4059da20cb5d41f8dc4bec5ecbce9eeaf7c80a8eaea8",
+      "revision_audit/k1_fair/runs/new_s2_fixed_lead_V6_seed2/best.pt": "0caaecbbaf4c2bd5e211fc06d7c713a3a183055d57a06f9223a120556ccd8df2",
+      "revision_audit/k1_fair/runs/new_s2_fixed_lead_aVF_seed2/best.pt": "3c5f32026ac4fea667c31f863cbc2686b61092c0e63961e4a42bb295b956be34",
+      "revision_audit/k1_fair/runs/new_s2_fixed_lead_aVL_seed2/best.pt": "ddd29a0c91a97a56c502656f683c96d71bd19784be5d6696832b6cc1d7d451a6",
+      "revision_audit/k1_fair/runs/new_s2_fixed_lead_aVR_seed2/best.pt": "cd23e994422525e9706d92cb2df904b2c13b6149fe971035db74b21b7b2b4c8a",
+      "revision_audit/k1_fair/runs/new_s2_global_learned_k_seed2/best.pt": "20bb9c0d13501c71bca153543077e9041aaebb6cbdda7d9d8eb0c350f1a0bd84",
+      "revision_audit/k1_fair/runs/new_s2_proposed_seed2/best.pt": "d205696044b76431ced5500999b50428fb1d878b8b74b71f8402a6e3296eee70",
+      "revision_audit/k1_fair/runs/new_s2_random_k_seed2/best.pt": "d2832d405af6727ccdd691e8c2dc2f0084a603eac276f7684960f320efab2099",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_III_seed0/best.pt": "db1c352801d0ee3f0fdf16455790f36e8c4c26a46fbbe2d1813c4323f323e7c4",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_III_seed1/best.pt": "d4757dbfa8844cb650c3d5ed461ffee09a19b6a3b8ee4db34844daa486641f0e",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_III_seed2/best.pt": "241168cdf856db7763be8e551c7e73ab394fee94b17dc659b6cb68fe17b883d6",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_II_seed0/best.pt": "e36405d8b33ccf47eff0b69ce366bfe3609b75a7c2e124f5fe22de9a4ec93d1e",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_II_seed1/best.pt": "a9de1778b0a00317215f783a8dbe6924a97c9caa6d5f1ea04abd5f49eec20aaa",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_II_seed2/best.pt": "d9128c959de5db8ca53174b7dd8d96b6d11f0a5d371fb9862f2f4376e1b814ad",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_I_seed0/best.pt": "66e7d6462713601a7b6dcd23abb0b7b10c4f339ca3d7b378f8fda82f47b4b64e",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_I_seed1/best.pt": "167e9aa2bc45a48e9145775b55be2939b48043fd9fc02b31ac9545314f56cba3",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_I_seed2/best.pt": "eab1255cb2ac541ee794b23d178412dfd3412702a75b0a3ee8c47c1e469edec6",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_V1_seed0/best.pt": "fe7c125cf2bd321e6be66fb8364acbee2300538cc55ad61031c1cded353f1582",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_V1_seed1/best.pt": "a25a73400fa75412ab45d068068609cc1724824b86f326f26d3cd8ecac230db6",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_V1_seed2/best.pt": "ac58f16de52d6dd1664836cd788dd69daab2cbc0def6f68083b0d4b5b47f0d1c",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_V2_seed0/best.pt": "d16a09c77af8e9cbc20643ff593099c110e1cbe738b814720049eb8aec400493",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_V2_seed1/best.pt": "6003d208e3077b18aefd41bf664b9ad2eac5ea4c697014852e5014dd73b683d4",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_V2_seed2/best.pt": "19f6e66b6c70735989b77834fcb63cd81193e7a3902d122936f062732a2da46b",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_V3_seed0/best.pt": "5eae3bea0c1e5e034658dbca989ee8e0040ec49ba7e5721c000221ef10ed479e",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_V3_seed1/best.pt": "09fb5f8912cabe758757de4b3911259dacf1aabf25201e8bf3b6092467b0d9c2",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_V3_seed2/best.pt": "728d689eca99c679f212794ebafccf546b492c321498106930e93166b041f21e",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_V4_seed0/best.pt": "cfc02eb65fab32816b940a1070cc4badb02609c20ee82c1728241ee1519f99c4",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_V4_seed1/best.pt": "a5c20a0f5c98505f3de6061571411f897cbb480506f940582ea9988d4253a48a",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_V4_seed2/best.pt": "6fa36d9362011a833189071c7356adcc98b690909179b9303b4c5bb78ca818a2",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_V5_seed0/best.pt": "b9fb8c66e62d1c7f140d661857eacc16d5d25a30fb419111b76e81ee7a4da666",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_V5_seed1/best.pt": "54e264f95c136954d62bafdab9a656f2c1fad6fafa941ca8e477a43c4e09fa3f",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_V5_seed2/best.pt": "cd7fec05964ce1d69e5aa50202c6331c64c45842421dc3184962d24756984027",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_V6_seed0/best.pt": "da860fcfe44e70b9ed7ece4fbca7a438b749718122d8892125f283e16b0042a8",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_V6_seed1/best.pt": "9ca0667071ffcf6f128b9f688db13d68f1febfc3bc099742c22ae4d9e5b18944",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_V6_seed2/best.pt": "8ef16792e59d14b3a9d867dbd36141d62c2ae70ed7d3a69dc9322e75ead5401b",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_aVF_seed0/best.pt": "0f3c5c30e41b90be806b87638328fd08961b157067eec1380b11d8815e7ff474",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_aVF_seed1/best.pt": "db86e8872e550fa18039138ea643be9dda5d0485eb4b86cba168990099a3bde9",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_aVF_seed2/best.pt": "c8e8c04c5a2c9a842f9d788afe645bd814f1e7a8a784e6b30cf7e4e14a2da16d",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_aVL_seed0/best.pt": "969fe5b19ffab0dbee65a372d99aa4d7dc585f7b785049c4cfc1b761b4a8ab60",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_aVL_seed1/best.pt": "bca1afb2b7c14ffd4b3b7e0d529aeae744557fe19a97d00e6b5ef78f28e6c909",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_aVL_seed2/best.pt": "f10cbd8033c94298b719f80c1498e62661bc7d05cd7c7938f23ac0e08e21bb95",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_aVR_seed0/best.pt": "e1794c11181ead6ea5c53fb4ff0304f33643e1975bc58feacf21a3f12423df4b",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_aVR_seed1/best.pt": "26bbf7fbbb40fcdcb7466e3c02cb5b6b2cebb0eb4acc6a88b701b8a3932da7ad",
+      "revision_audit/k1_fair/runs/orig_fixed_lead_aVR_seed2/best.pt": "934052f66df1f908ee0f8ed366193945c1d49023012632a9144d5cf4c12b9e03"
+    },
+    "frozen_choices": {
+      "revision_audit/thresholds/frozen_thresholds.json": "f3991973524da75cf186ad4172fdac08b98a0b4353877848c9bceb8fa3bc41aa",
+      "revision_audit/subset_enum/locked_subsets_new.json": "6ac3a3b779471e2c466e567e3d0368ebe717db48de3fdef55e4b3e86f72782e8",
+      "revision_audit/subset_enum/locked_subsets_orig.json": "f569c7197aa014e7976f46669a28770bb7ecd645877744cf9eef55d451c360e6",
+      "revision_audit/k1_fair/results/new_backbone_best_fixed_lead.json": "ea43702a25f1979510bdc24cc0b23649ae0127a8855e41ce709764c8c50079a2"
+    },
+    "external": {
+      "revision_audit/external_ecgarr/label_map_frozen.json": "3af4196c2dc30a11c693c15df94c58521247eaf8f2acc5be693748618ccba604",
+      "revision_audit/external_ecgarr/build_labels.py": "63e66d48e4ef97d728a2b8081c22a32bc4ef4b034e32f5cc7cf0e932fd27ee42",
+      "revision_audit/external_ecgarr/results/external_labels.csv": "0752b6525b5b7aa60a8445e2cc7240d47046054c3a83da63a9e034078ab18ece",
+      "revision_audit/external_validation_plan/external_pipeline.py": "4521cf1c9a4a9df727eb434c52ab9531fdf23c8ced283e77a2379ced78102664"
+    },
+    "code": {
+      "revision_audit/backbone/cache_waveforms.py": "9b8f6d03ded3296a77f996b9725d7b8106cbd040f9db63bd6385bbd063a88b23",
+      "revision_audit/backbone/embed.py": "936e673fd73862096c283b4ea6337bd40a0d2e866f3127d5067e978ddce359be",
+      "revision_audit/backbone/eval_backbone.py": "a5fd7f07257bb30d303bab864f87de6ab3d5908b890335efe8d1fb3a446c9c6f",
+      "revision_audit/backbone/lead_resnet.py": "f54ea4fc686355ada64cf2d99615aed488167dc2311b5074a594755fdc4bbc2c",
+      "revision_audit/backbone/train_backbone.py": "f58998b09a25d4e4eaa4cafb379d3064bb1b28d63f645e9859e1faebf0abf18f",
+      "revision_audit/clinical/selection_heatmap.py": "e3a18ca7c9d5b1fa4168fbaab3687e5b4f92c6d749e1d7905ae5c8d066b8b5a6",
+      "revision_audit/comm/channel_sim.py": "03587f447e85592686dabefadfc1dbc73497e9bba87c1d3ecb4f43cd4afe9795",
+      "revision_audit/comm/comm_models.py": "545d4931b6869520f24fcf6d59cfff038a474e89b40b440e42d32dcc03029465",
+      "revision_audit/comm/comm_report.py": "f38df4f87be1e54d9e54d4494dfe862a7a16e1d3a419cfcda42b846b7b4b7f4f",
+      "revision_audit/comm/eval_comm.py": "2f9141725f320b75d125663f16b66bff5f4cf39cc240d2b06b7503645551328c",
+      "revision_audit/comm/lock_policies.py": "3c685c13accdc7866b2696796d426373522acec7dbf38a7065b769283c31fcdf",
+      "revision_audit/comm/rm_codes.py": "2d85e53c13b7cc390c3f5c3900636641d54f2e88880ff850b462001a18ecb3e0",
+      "revision_audit/comm/sscc.py": "60b1d33f45a0ea3adfd1250b752b06686f69f49f17e041940abd114ef5177ceb",
+      "revision_audit/comm/train_comm.py": "1bb6db063cc6ff921e4d678221f0d69b5c0846ac641e2f019557ae198bf2e7f9",
+      "revision_audit/common/stats.py": "12beb80ab10193ef73d636cac0525d7c280f0401e84f27c2bc93a2e8693f46bc",
+      "revision_audit/deliverables/make_figures.py": "1563f4bbe08284c82a5a045e90e416d9ddd4abca895ac5ffe1174cc532617ae3",
+      "revision_audit/external_ecgarr/build_labels.py": "63e66d48e4ef97d728a2b8081c22a32bc4ef4b034e32f5cc7cf0e932fd27ee42",
+      "revision_audit/external_ecgarr/external_eval.py": "19052ce53ac1b68f7754495e8ed2c73414bbe95153747b63fdf32d1c528d57f8",
+      "revision_audit/external_ecgarr/input_qa.py": "7b54cbd23ce1768b8a4eff010aacd97e9d3997934d4daf82dfa7965704c69915",
+      "revision_audit/external_ecgarr/verify_sha256.py": "e4856003e7a5b9624b75717a268ea56132e24f0fc3ebc42b7798eb748b09fcda",
+      "revision_audit/external_validation_plan/external_pipeline.py": "4521cf1c9a4a9df727eb434c52ab9531fdf23c8ced283e77a2379ced78102664",
+      "revision_audit/external_validation_plan/pipeline_check.py": "997491940af7355d03f9aba80cc9bdc566ed677fe965400ed4b73f1d9e9a4157",
+      "revision_audit/fixed_v5/compare_proposed_vs_v5.py": "856f049a50a5e86e4b1373698f931761a159e288220500b7789874849a22bcf3",
+      "revision_audit/fixed_v5/run_fixed_lead.py": "29206309800e80e1e6d82cd91817702c447e96a0aa70ad8a171fd244877036af",
+      "revision_audit/formal_eval/k1_eval.py": "b102aa03669f76bf46e8faabfc56cf4938a9b4ba960214481e0bd1228e10fea5",
+      "revision_audit/gate_lock/gate_eval.py": "9acefbab2643fae9ecc9cf0dd1b8cf196756157c849476efd285815e107f08c1",
+      "revision_audit/gate_lock/lock_gate_seeds.py": "5eed875786e56acc2f4cf18691dc980af80a97414b550ef6f50d0cd4b730dc92",
+      "revision_audit/k1_cd_sttc_path/cd_sttc_path_analysis.py": "fb8721646e4d1915702f6355ab58c17aac52cb2fc7636b7d49af510cb0e0a66c",
+      "revision_audit/k1_clean_to_20db_val_audit.py": "96bcd667b293b32faabee201c222c0d161f601aed48b16380540ecb6cb226e64",
+      "revision_audit/k1_fair/lock_new_best_lead.py": "0c9470449ff9a0d1b4419fc215e4af2ace02cd5debeef8914a0d67b1a43c5989",
+      "revision_audit/k1_fair/train_heads.py": "4be4fd96373754d1726e58869bef6ddf6374babe54fd07f18e715afb975edb38",
+      "revision_audit/k1_fixed_lead_val_audit.py": "3113899e8aea620f09ad25edb4c68ea1e37698e5bbda5791322dc0aa512a8236",
+      "revision_audit/k1_gate_pilot/gate_pilot.py": "eef976af8e140d57e6adecb67eaced42c7aeb9a0800ec7e2ce70ae9f98e0dcd9",
+      "revision_audit/k1_gate_pilot/multiseed_bootstrap.py": "5931b9aa9da93ce66952150c242bc4732722c4882bbfe1cf6b1a83c354f62790",
+      "revision_audit/k1_gate_pilot/oof_inner_fold.py": "8d21f348696d7d5071cbc4411c8e52fe157ef3454ce2be4e23ea1dc1d2e9ca95",
+      "revision_audit/k1_gate_pilot/train_proposed_valonly.py": "983f37f8907fba9cf4aa211de0160aec73352510bdc6931486abcdaa15a71905",
+      "revision_audit/lock/make_lock.py": "48c138cb98928d873d19592ed1d5a8d843596e2a0a865b6091a70a6e29678c8b",
+      "revision_audit/subset_enum/enumerate_subsets.py": "050237b6021941e5c71873c8258db9d46cbf28c9ea96f8355bff489aa51f2a40",
+      "revision_audit/thresholds/freeze_thresholds.py": "a3ab9f9d307eb91191387ec9652b565fcccb3d5b6ebd4018ec59ef39f97de3b3",
+      "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/channels/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/channels/repetition.py": "7568fd9c8f9f9207b59e8ba06228e972dd84f7536b0874c80beff9ccb1c399ef",
+      "src/channels/wireless.py": "257acb618ebc96c621b2e397fdebb39947d693ed958db173a77e25192cf3ac51",
+      "src/data/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/data/audit.py": "d105392587b3d3d03e2a35223cb6f7742928f2ff1f24fee4c027b2129e2d44c5",
+      "src/data/clinical_lead_subsets.py": "b41ce792eca40d09a5343aaa81997ab88d4560cfea839cd5731666930c1cc9e7",
+      "src/data/dataset.py": "49a00e873c0a6745dbeae24215a60bea150d55bfb52df82f129f2e6bd5dea1f0",
+      "src/data/labels.py": "f5d1f7e9d8c388beef407282a1d9763d4af300559889ed3b39ce392a9432c7bf",
+      "src/data/splits.py": "e3e1c79b4cdcb78e8a355b1c770c5a5cfc61231b22e7e2290cd5af6b25520b33",
+      "src/evaluation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/evaluation/bootstrap.py": "e4acaed2eb9d2ddc4a2c7f839d841dd5f2ee186a802637c9ba314c28cda57845",
+      "src/evaluation/calibration.py": "c81a55e8904c094b881094590d6f594d327827028cd90d8dda86025169d6cbb4",
+      "src/evaluation/channel_cost.py": "fa1180d21352cafb99ccb3730c549d2da2bbfb79300297cc4ea80109de95c0f6",
+      "src/evaluation/evaluate.py": "ee435b89cdfd95e6ab362e038439894fbcbe2bce1fad6b6735fef867eae4790d",
+      "src/evaluation/hierarchical_bootstrap.py": "2cd96d3e0675b5137c4c0396ed9714bfd4db450ae1e45605ec14784b9067493c",
+      "src/evaluation/metrics.py": "8455ad093255c4acf00a980d90ae1c6e49b26b2d8a8826045487ee3cd76d7d9a",
+      "src/evaluation/selection_diagnostics.py": "2b547a5e253fe75c7203c68bae4cddb9a9a5f55d00e02f499429854307fa7a95",
+      "src/evaluation/subgroup_metrics.py": "583cb9c52d43ba99ab00b462defb3e0d4b9103a9640695c69aa9a64edce11fc9",
+      "src/models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/models/classifier.py": "aafc59f4acb54cc03032945828a4d32bbd499eecbd7a497a6d064b5fc6711227",
+      "src/models/encoder.py": "7f64e156bed95717f374061d43ee3de16dd8ffef028523ad731168d4ccc6e19d",
+      "src/models/full_model.py": "b9d4f425c9789d1a12679f0d5bf98d710f7116e1db003227cbaf318d5a248565",
+      "src/models/fusion.py": "1edf093ed775e30f16dafe2e5b2783acc0f93ae0e292d7690da50bcc47ae4e92",
+      "src/models/lead_selectors.py": "e1cf123cdb6cf235693f78ba596ff58f99b9cae73a7c4aa82b0f08a986cf362b",
+      "src/models/phase2a_model.py": "5a666007d5e597216445c2ed3c980c84ea0379d8c6e2e02c6c2cc2110e6e2630",
+      "src/models/phase2b_model.py": "0a59496f5e6556bfdae3faac9585bfa890c6a9b36a060e8bc9eafa5f594cc50e",
+      "src/models/symbol_rank_selector.py": "d20b1e258b2e67ba7341cfd3bdddfe5e4a5a2ca8a0614e288229f1dd77fecc00",
+      "src/training/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/training/losses.py": "a0fb604b06ed14b4427aee05430c39602918a5a34d65fc8e19672f38bfe751fe",
+      "src/training/seed.py": "ee69c2c66a94b130b97daf396d7b9fe27f2565722c232fec310c79e7bc05de40",
+      "src/training/train.py": "07651131943fa48547b49ed3781b342f4b67cdd6ba45770ccf32307a16df0e78",
+      "scripts/train_phase2a.py": "8cf2553fd69549ec1b3ed5d0393b9551cc8688b69fffe93e3d6c8c9551095968",
+      "scripts/train_phase2b_pilot.py": "20d6c3a234bd5cd250d3e27eee8e7f769fc15784567833ac8ed9ee79e2953853"
+    }
+  }
+}

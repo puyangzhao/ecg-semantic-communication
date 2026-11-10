@@ -1,0 +1,13 @@
+# Recommended installation (see README "Environment"):
+#   conda env create -f environment.yml
+#   conda activate ecg_semcomm
+#   pip install --no-deps wfdb==4.3.1
+#   export PYTHONNOUSERSITE=1
+name: ecg_semcomm
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10.20
+  - pip
+  - pip:
+      - -r requirements_tested.txt

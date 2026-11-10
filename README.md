@@ -1,95 +1,85 @@
-# Task-Aware 12-Lead ECG Transmission Under Bandwidth and Noise Constraints
+# Selecting and Transmitting ECG Information Under a Limited Wireless Budget
 
-This is a **minimal research-code release** accompanying the manuscript
-*"Task-Aware 12-Lead ECG Transmission Under Bandwidth and Noise
-Constraints"* (Puyang Zhao, Jingxi Zhao, Huiyun Zhang), provided so
-reviewers and readers can inspect and run the core method implementation
-directly.
+**Puyang Zhao · Jingxi Zhao · Huiyun Zhang**
 
-## What this method does
+Research code for selecting ECG lead representations and transmitting diagnostic information under a limited wireless budget.
 
-A shared per-lead 1D residual encoder maps each of a 12-lead ECG's leads
-to a 32-dimensional latent embedding. A personalized, sample-specific
-selector picks which `K` of the 12 leads to transmit. Each selected
-lead's embedding is reinterpreted as 16 complex symbols, of which `m` are
-actually sent (the rest dropped), each repeated `r` times for noise
-protection, under a fixed per-lead budget `m * r = 16` complex channel
-uses. Transmission is simulated over an AWGN or block-Rayleigh fading
-channel; the receiver equalizes (Rayleigh) and combines the repeated
-copies of each symbol, zero-fills whatever was never transmitted, and the
-resulting per-lead latents are mean-pooled over the selected leads and
-passed through a shared multilabel classification head.
+![ECG selection and transmission](assets/overview.gif)
 
-- **Input:** a batch of raw 12-lead ECG windows, shape `[B, 12, T]`
-  (`T=1000` at 100 Hz in the manuscript, i.e. 10 s).
-- **Output:** multilabel diagnostic probabilities, shape
-  `[B, num_classes]` (5 classes in the manuscript: NORM, MI, STTC, CD,
-  HYP), plus the per-sample lead-selection mask and channel-use/energy
-  diagnostics.
+*All 12 leads are acquired and encoded at the transmitter. Lead selection is evaluated over a clean link; alternative coding schemes are compared under matched wireless budgets. Animation is schematic.*
 
-## What is included
+## Overview
 
-```
-src/
-  encoder.py        shared per-lead 1D residual encoder
-  lead_selector.py  sample-specific Top-K lead selection (proposed method)
-  channel.py         AWGN / block-Rayleigh channel, equalization, fixed
-                      N=16 symbol budget, m*r=16 repetition allocation/combining
-  model.py            end-to-end assembly + multilabel classification head
-examples/
-  minimal_demo.py    runnable demo on synthetic tensors
-configs/
-  example_config.yaml
-```
+A shared 1-D ResNet encodes each lead into 32 features. A record-specific selector scores each lead in the context of the full recording. Transmission experiments compare ranked repetition, separate source–channel coding (SSCC), and learned joint source–channel coding (JSCC) of one or all 12 embeddings.
 
-## What is intentionally NOT included
+- **Lead selection:** matched fixed leads, population ranking, random selection, and fixed subsets.
+- **Transmission:** AWGN and fading channels, channel estimation, and 8/16/32-use budget comparisons.
+- **Evaluation:** five diagnostic superclasses on PTB-XL and CD/partial STTC on an independent ECG cohort.
 
-This is a method-implementation reference, not the full experimental
-codebase. **Not included:** PTB-XL data or any data-download script,
-trained model checkpoints, raw predictions or numerical-results JSON
-files, the manuscript's figures or its LaTeX/PDF source, the full
-training/evaluation/bootstrap pipeline, and the unit test suite used
-during development. This repository does **not** reproduce every
-manuscript result -- it demonstrates the method itself, runnably, on
-synthetic input.
+Single-lead selection improves PTB-XL macro-AUROC, with gains for CD and MI and a loss for STTC. Joint coding of all 12 embeddings performs best among the tested schemes at the 16-use budget. External CD AUROC improves while AUPRC declines.
 
-## Install
+## Quick start
 
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/puyangzhao/ecg-semantic-communication.git
+cd ecg-semantic-communication/code/pipeline
+conda env create -f environment.yml
+conda activate ecg_semcomm
+python -m pip install --no-deps wfdb==4.3.1
+export PYTHONNOUSERSITE=1
 ```
 
-Requires Python >= 3.10. `requirements.txt` pins `torch==2.13.0`; if you
-need a CPU-only or a different CUDA build of PyTorch, install it first
-per the instructions at https://pytorch.org/get-started/locally/ and then
-`pip install -r requirements.txt` for the remaining (torch-independent)
-dependencies.
+The pinned environment records the analysis versions. `wfdb` is installed separately because its declared pandas requirement differs from the pandas version used in the analyses. GPU training is configured by default; use `device: cpu` in a copied configuration for CPU runs.
 
-## Run the demo
+### Generate figures and tables
+
+From the repository root, using the environment above:
 
 ```bash
-python examples/minimal_demo.py
+python code/make_all.py --out outputs/paper
 ```
 
-This builds an untrained `TaskAwareECGModel` from
-`configs/example_config.yaml`, runs a batch of random synthetic tensors
-through it once under AWGN and once under block-Rayleigh fading, and
-prints: the input shape, the selected lead indices per sample, the
-channel-use/energy accounting, and the output probabilities. Because the
-model is untrained (random initialization, no PTB-XL data), the printed
-probabilities are illustrative only -- they demonstrate the pipeline's
-shapes and control flow, not diagnostic performance.
+This reads aggregate results in `code/data/`; no ECG downloads or training are needed. It generates analytical figures and tables. The hand-edited manuscript layout and legacy plots are not recreated by this command.
 
-## Not a clinical device
+### Train and evaluate
 
-This is research code accompanying an academic manuscript. It is **not a
-clinical decision-support system, not a diagnostic device, and has not
-been validated, cleared, or approved for any clinical or diagnostic
-use.** No component of this repository should be used to make, support,
-or influence a real patient-care decision.
+Download [PTB-XL 1.0.3](https://physionet.org/content/ptb-xl/1.0.3/) and follow the [pipeline guide](code/pipeline/README.md). The official folds are used: 1–8 training, 9 validation, 10 testing. External evaluation uses [ECG-Arrhythmia 1.0.0](https://physionet.org/content/ecg-arrhythmia/1.0.0/).
+
+```bash
+cd code/pipeline
+python scripts/run_data_audit.py
+python scripts/train_baseline.py --config configs/baseline.yaml --run-name baseline_run1
+python scripts/precompute_embeddings.py
+python scripts/train_phase2a.py --method proposed --seed 0 --config configs/phase2a.yaml --run-name phase2a_proposed_seed0
+```
+
+## Repository
+
+| Path | Contents |
+|---|---|
+| `code/pipeline/src/` | Encoders, selectors, channels, losses and metrics |
+| `code/pipeline/scripts/` | Encoder and downstream training |
+| `code/pipeline/configs/` | Model and training configurations |
+| `code/pipeline/revision_audit/` | Matched comparisons, external evaluation and stability analyses |
+| `code/pipeline/revision2/` | Budget and channel experiments |
+| `code/data/` | Aggregate results for plotting |
+| `code/make_all.py` | Figure and table generation |
+| `assets/` | Animated method overview and its rendering script |
+
+Raw ECGs, patient-level predictions and trained checkpoints are not distributed here. Download data under the providers' terms and train models with the supplied pipeline. Aggregate summaries are included to reproduce the reported plots. The exploratory switching analysis and post hoc stability analyses remain identified separately.
+
+## Citation
+
+```bibtex
+@misc{zhao_ecg_information,
+  title = {Selecting and Transmitting ECG Information Under a Limited Wireless Budget},
+  author = {Zhao, Puyang and Zhao, Jingxi and Zhang, Huiyun},
+  year = {2026},
+  howpublished = {Research code},
+  url = {https://github.com/puyangzhao/ecg-semantic-communication}
+}
+```
 
 ## License
 
-MIT (see `LICENSE`) for the code in this repository. PTB-XL itself, if
-you separately obtain it, is governed by PhysioNet's own license, not
-this repository's.
+Code: [MIT](LICENSE). Dataset and bundled font licenses remain with their respective providers.

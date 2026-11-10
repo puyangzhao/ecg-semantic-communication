@@ -1,0 +1,1 @@
+Liberation Sans 2.1.5 (SIL OFL 1.1), metric-compatible with Arial; source https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz

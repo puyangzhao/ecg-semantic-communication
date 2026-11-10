@@ -1,0 +1,58 @@
+{
+  "flow": [
+    [
+      "header files",
+      45152
+    ],
+    [
+      "excluded: unreadable",
+      2
+    ],
+    [
+      "excluded: not 12 standard leads",
+      0
+    ],
+    [
+      "excluded: non-finite / adapter refused",
+      97
+    ],
+    [
+      "excluded: empty Dx",
+      0
+    ],
+    [
+      "excluded: flat lead",
+      1494
+    ],
+    [
+      "excluded: clipping",
+      13
+    ],
+    [
+      "excluded: exact duplicate pair",
+      174
+    ],
+    [
+      "excluded: pacing rhythm",
+      1171
+    ],
+    [
+      "eligible",
+      42201
+    ]
+  ],
+  "outcome_counts": {
+    "CD": {
+      "positive": 4844,
+      "negative": 37257,
+      "excluded_ambiguous": 100,
+      "prevalence_among_analysed": 0.11505664948576043
+    },
+    "STTC_partial": {
+      "positive": 12234,
+      "negative": 29345,
+      "excluded_ambiguous": 622,
+      "prevalence_among_analysed": 0.2942350705885182
+    }
+  }
+}

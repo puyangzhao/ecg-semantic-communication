@@ -1,0 +1,168 @@
+{
+  "rules": "Lock SNR-adaptive policies on fold 9 (validation) only, for every channel/CSI condition.\n\nPre-specified rules:\n  SNR distribution  : uniform over POLICY_SNRS = {-15,-10,-5,0,5,10,20} dB (40 dB / noiseless reported only)\n  target metric     : seed-mean (seeds 0-2) realization-mean macro-AUROC on fold 9\n  families          : rep_orig (submitted Phase 2B checkpoints), rep_ctrl (controlled lead), sscc (5 configs)\n  best fixed option : the single option maximizing the target averaged over POLICY_SNRS\n  threshold policy  : (rep families) r=4 if SNR <= tau else r=2, tau in {-inf,-15,-10,-5,0,5,10,20}\n  lookup policy     : per SNR, the option maximizing the target at that SNR (rep: r; sscc: configuration)\n  ties              : higher seed-mean macro-AUPRC, then smaller tau / earlier option in the listed order\nThe submitted policies stay as they were frozen in 2026-08 (AWGN tau=-10, Rayleigh perfect-CSI tau=0)\nand are evaluated unchanged; the threshold rule above is re-applied only where no policy existed\n(Rayleigh with LS-2 pilots) and, for comparison, to every condition.\n",
+  "policy_snrs": [
+    -15,
+    -10,
+    -5,
+    0,
+    5,
+    10,
+    20
+  ],
+  "conditions": {
+    "awgn_perfect": {
+      "rep_orig": {
+        "best_fixed": "rep_orig_r4",
+        "best_fixed_target": 0.7729555687139663,
+        "lookup": {
+          "-15": "rep_orig_r4",
+          "-10": "rep_orig_r4",
+          "-5": "rep_orig_r4",
+          "0": "rep_orig_r2",
+          "5": "rep_orig_r2",
+          "10": "rep_orig_r2",
+          "20": "rep_orig_r2"
+        },
+        "lookup_target": 0.7747245952749117,
+        "threshold_tau_selected": -5,
+        "threshold_target": 0.7747245952749117,
+        "submitted_tau": -10,
+        "submitted_target_on_this_val_harness": 0.7740565408019281
+      },
+      "rep_ctrl": {
+        "best_fixed": "rep_ctrl_r4",
+        "best_fixed_target": 0.797959649758777,
+        "lookup": {
+          "-15": "rep_ctrl_r4",
+          "-10": "rep_ctrl_r4",
+          "-5": "rep_ctrl_r4",
+          "0": "rep_ctrl_r4",
+          "5": "rep_ctrl_r2",
+          "10": "rep_ctrl_r2",
+          "20": "rep_ctrl_r2"
+        },
+        "lookup_target": 0.7992528267339509,
+        "threshold_tau_selected": 0,
+        "threshold_target": 0.7992528267339509
+      },
+      "sscc": {
+        "best_fixed": "sscc_S6_RM1_QPSK",
+        "best_fixed_target": 0.7590206036466682,
+        "lookup": {
+          "-15": "sscc_S6_RM1_QPSK",
+          "-10": "sscc_S6_RM1_QPSK",
+          "-5": "sscc_S6_RM1_QPSK",
+          "0": "sscc_S6_RM1_QPSK",
+          "5": "sscc_S16_RM2_QPSK",
+          "10": "sscc_S16_RM2_QPSK",
+          "20": "sscc_S64_UNC_16QAM"
+        },
+        "lookup_target": 0.7615158173255986
+      },
+      "jscc_ctrl_target": 0.813289855604406,
+      "jscc_e2e_target": 0.8702798982518336
+    },
+    "rayleigh_perfect": {
+      "rep_orig": {
+        "best_fixed": "rep_orig_r4",
+        "best_fixed_target": 0.7483838138468275,
+        "lookup": {
+          "-15": "rep_orig_r4",
+          "-10": "rep_orig_r4",
+          "-5": "rep_orig_r4",
+          "0": "rep_orig_r4",
+          "5": "rep_orig_r2",
+          "10": "rep_orig_r2",
+          "20": "rep_orig_r2"
+        },
+        "lookup_target": 0.7493463158726396,
+        "threshold_tau_selected": 0,
+        "threshold_target": 0.7493463158726396,
+        "submitted_tau": 0,
+        "submitted_target_on_this_val_harness": 0.7493463158726396
+      },
+      "rep_ctrl": {
+        "best_fixed": "rep_ctrl_r4",
+        "best_fixed_target": 0.7701877575985204,
+        "lookup": {
+          "-15": "rep_ctrl_r4",
+          "-10": "rep_ctrl_r4",
+          "-5": "rep_ctrl_r4",
+          "0": "rep_ctrl_r4",
+          "5": "rep_ctrl_r4",
+          "10": "rep_ctrl_r2",
+          "20": "rep_ctrl_r2"
+        },
+        "lookup_target": 0.7708099376769291,
+        "threshold_tau_selected": 5,
+        "threshold_target": 0.7708099376769291
+      },
+      "sscc": {
+        "best_fixed": "sscc_S6_RM1_QPSK",
+        "best_fixed_target": 0.7355328084728553,
+        "lookup": {
+          "-15": "sscc_S6_RM1_QPSK",
+          "-10": "sscc_S6_RM1_QPSK",
+          "-5": "sscc_S6_RM1_QPSK",
+          "0": "sscc_S6_RM1_QPSK",
+          "5": "sscc_S6_RM1_QPSK",
+          "10": "sscc_S6_RM1_QPSK",
+          "20": "sscc_S16_RM2_QPSK"
+        },
+        "lookup_target": 0.7360351037983159
+      },
+      "jscc_ctrl_target": 0.7832725178838162,
+      "jscc_e2e_target": 0.8344362073391941
+    },
+    "rayleigh_ls2": {
+      "rep_orig": {
+        "best_fixed": "rep_orig_r4",
+        "best_fixed_target": 0.692801144528489,
+        "lookup": {
+          "-15": "rep_orig_r4",
+          "-10": "rep_orig_r4",
+          "-5": "rep_orig_r4",
+          "0": "rep_orig_r4",
+          "5": "rep_orig_r2",
+          "10": "rep_orig_r2",
+          "20": "rep_orig_r2"
+        },
+        "lookup_target": 0.6942725244891454,
+        "threshold_tau_selected": 0,
+        "threshold_target": 0.6942725244891454
+      },
+      "rep_ctrl": {
+        "best_fixed": "rep_ctrl_r4",
+        "best_fixed_target": 0.70871264328864,
+        "lookup": {
+          "-15": "rep_ctrl_r4",
+          "-10": "rep_ctrl_r4",
+          "-5": "rep_ctrl_r4",
+          "0": "rep_ctrl_r4",
+          "5": "rep_ctrl_r4",
+          "10": "rep_ctrl_r2",
+          "20": "rep_ctrl_r2"
+        },
+        "lookup_target": 0.7095204502505112,
+        "threshold_tau_selected": 5,
+        "threshold_target": 0.7095204502505112
+      },
+      "sscc": {
+        "best_fixed": "sscc_S6_RM1_QPSK",
+        "best_fixed_target": 0.6958258050835194,
+        "lookup": {
+          "-15": "sscc_S6_RM1_QPSK",
+          "-10": "sscc_S6_RM1_QPSK",
+          "-5": "sscc_S6_RM1_QPSK",
+          "0": "sscc_S6_RM1_QPSK",
+          "5": "sscc_S6_RM1_QPSK",
+          "10": "sscc_S6_RM1_QPSK",
+          "20": "sscc_S16_RM2_QPSK"
+        },
+        "lookup_target": 0.6962362448692924
+      },
+      "jscc_ctrl_target": 0.7259296361473914,
+      "jscc_e2e_target": 0.7662733825823472
+    }
+  }
+}

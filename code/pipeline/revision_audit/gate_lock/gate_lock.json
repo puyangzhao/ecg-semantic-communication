@@ -1,0 +1,164 @@
+{
+  "rule": "keep seed iff fold-9 (gate_eq - margin) at 50% rank-matched > 0 for both CD_auprc and STTC_auprc",
+  "rule_source": "PI instruction 2026-11-04; applied to results/multiseed6/multiseed_bootstrap.json",
+  "candidate_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "per_seed": {
+    "0": {
+      "CD_auprc": 0.009436848095095263,
+      "STTC_auprc": 0.022677027836326302,
+      "keep": true
+    },
+    "1": {
+      "CD_auprc": -0.02108234726051994,
+      "STTC_auprc": -0.0014047469129110368,
+      "keep": false
+    },
+    "2": {
+      "CD_auprc": -0.018728821495982984,
+      "STTC_auprc": -0.013343296732264975,
+      "keep": false
+    },
+    "3": {
+      "CD_auprc": 0.0037976682690714636,
+      "STTC_auprc": 0.04700382925414881,
+      "keep": true
+    },
+    "4": {
+      "CD_auprc": -0.02972318119441597,
+      "STTC_auprc": 0.011827445818320181,
+      "keep": false
+    },
+    "5": {
+      "CD_auprc": 0.008811868581793059,
+      "STTC_auprc": 0.01179749339698588,
+      "keep": true
+    }
+  },
+  "locked_seeds": [
+    0,
+    3,
+    5
+  ],
+  "disclosure": "development-fold selection of 3 of 6 trained gate/selector seeds; all 6 fold-9 results retained",
+  "primary_policy": "equal-weight gate, rank-matched top 50% of switchable records (quota comparison)",
+  "secondary_policies": [
+    "equal-weight gate with frozen training-quantile threshold, record by record",
+    "selector top1-top2 margin (rank-matched and training threshold)",
+    "random routing with the same switch count (200 routings)"
+  ],
+  "encoder": {
+    "path": "outputs/runs/baseline_run1/checkpoints/best.pt",
+    "sha256": "02731a58c4533ea62cd74f87c9ac7e9a4b5ccf6d560a73fecd5c67b9cfbea273"
+  },
+  "seeds": {
+    "0": {
+      "selector_head_checkpoint": "outputs/runs/phase2a_proposed_seed0/checkpoints/best.pt",
+      "selector_head_sha256": "a3a1c847f9926ffcf3ce80638fa20d6cfe0a4d15ea63a91b097aff58f387bcda",
+      "gate_params": "revision_audit/gate_lock/gate_seed0.npz",
+      "gate_params_sha256": "3d4d5c72e2efab2f88b3be60ce0cf77ee6bfe5060536561ab29c01f22b583278",
+      "oof_inputs_sha256": {
+        "oof_heldout_fold1.npz": "9cce198e3979088073424d0a654ed6ed6d9ac27bae4666706cfdfcc491cfaf4d",
+        "oof_heldout_fold2.npz": "e8a1c016adb26a11c48db50eb15020c09f6ae4ecf3d9bcfb487544b2ffc7e792",
+        "oof_heldout_fold3.npz": "1163f454fa7185b58ca528a2e58ad6c646280f5da6f20cf677369ef71b0cd871",
+        "oof_heldout_fold4.npz": "2f31efb97a727fbc87e5a01c2410b7498a9cac0ecf68b4e59f0d404175cca6b9",
+        "oof_heldout_fold5.npz": "a90394e5f326b4005fc66d6f420e4a1a43627615e9a3f32d7df43a929fb31d45",
+        "oof_heldout_fold6.npz": "4a206cd398b701de4e18a4639d7f0b2306ab9826ce7be9ef2cc267d3e90732d0",
+        "oof_heldout_fold7.npz": "e9eab5b5df55cdb56eefa90dcad3d77e7a2a23eb5290dc1fccfae988998a5cbf",
+        "oof_heldout_fold8.npz": "32bc1dc43a2d7040d119c4c93b2e434c2284ecda8ad6ef87a349a7a50df96f40"
+      },
+      "training_thresholds": {
+        "equal@25%": 0.044421373007803924,
+        "sttc_weighted@25%": 0.04840616357199287,
+        "margin@25%": 3.017629623413086,
+        "equal@50%": -0.019255383391082216,
+        "sttc_weighted@50%": -0.01819928871464283,
+        "margin@50%": 1.4026637077331543,
+        "equal@75%": -0.16150271532155894,
+        "sttc_weighted@75%": -0.14319531061607352,
+        "margin@75%": 0.5383338928222656
+      },
+      "fold9_refit_vs_saved_pred_gain_max_abs": 0.0,
+      "fold9_threshold_switch_rates": {
+        "gate_eq_thr": 0.5287548855388051,
+        "gate_sttc_thr": 0.5231714126186487,
+        "margin_thr": 0.5951982132886655
+      },
+      "n_train_switchable": 14469
+    },
+    "3": {
+      "selector_head_checkpoint": "revision_audit/k1_gate_pilot/phase2a_extra_seeds/runs/phase2a_proposed_seed3/checkpoints/best.pt",
+      "selector_head_sha256": "7b69b91b59f5da988bd6be461efba2d21fc335e7f7ecd1627ba9559c1c3625ef",
+      "gate_params": "revision_audit/gate_lock/gate_seed3.npz",
+      "gate_params_sha256": "fd89be377ec5571ffa49e2d7b1a725ca5e1404ddc3b986c8f05e1032841be242",
+      "oof_inputs_sha256": {
+        "oof_seed3_heldout_fold1.npz": "73459273c3ab536ad07e3eb7d0a0d451868b1c5b437b5583500269a2ed973397",
+        "oof_seed3_heldout_fold2.npz": "b1bf707366e4c8f1e9f1df9c9ccd085b3a95849b6b79e76d52c9819b7144b04f",
+        "oof_seed3_heldout_fold3.npz": "3fc847341f6fb126067fb5f980c39bf9757c61a742c38900649dbd592187b0eb",
+        "oof_seed3_heldout_fold4.npz": "617b6a1c4d06aeeac79892c9b30502869ac35e5e257d6bea1bcc3a64d56338d3",
+        "oof_seed3_heldout_fold5.npz": "69e770e46fe625e003c114deea5322c8777ea4ae79ce0d3bbbc3fa1db9bf9254",
+        "oof_seed3_heldout_fold6.npz": "7ea8ad41433bef29d3a62960eeeda3afbd9d43cce5d8597b93dba2c1425e821e",
+        "oof_seed3_heldout_fold7.npz": "754487ecbfa2c550cb52bc567bc24855fb741dcb5a705edaa9e942ab7096678f",
+        "oof_seed3_heldout_fold8.npz": "2a9846aab0af66b26a5d0112cda5e7eae24a7f877744de33a32db04d8babfac1"
+      },
+      "training_thresholds": {
+        "equal@25%": 0.043121787739060405,
+        "sttc_weighted@25%": 0.04257301089471201,
+        "margin@25%": 1.928104966878891,
+        "equal@50%": -0.028363467667396256,
+        "sttc_weighted@50%": -0.03197950550800184,
+        "margin@50%": 0.8934512138366699,
+        "equal@75%": -0.20305194341603072,
+        "sttc_weighted@75%": -0.19148734304041243,
+        "margin@75%": 0.3433588743209839
+      },
+      "fold9_refit_vs_saved_pred_gain_max_abs": 0.0,
+      "fold9_threshold_switch_rates": {
+        "gate_eq_thr": 0.49364289662797123,
+        "gate_sttc_thr": 0.49917081260364843,
+        "margin_thr": 0.5378662244333886
+      },
+      "n_train_switchable": 14262
+    },
+    "5": {
+      "selector_head_checkpoint": "revision_audit/k1_gate_pilot/phase2a_extra_seeds/runs/phase2a_proposed_seed5/checkpoints/best.pt",
+      "selector_head_sha256": "494ce874477a22364f408fdc1f40f38ef0fb9f3af8cf90ff4e8c968b6be3cca9",
+      "gate_params": "revision_audit/gate_lock/gate_seed5.npz",
+      "gate_params_sha256": "975279eaff9ac68a6caa4cd45d3860a915f67762c48e7931216e43db5e6e712f",
+      "oof_inputs_sha256": {
+        "oof_seed5_heldout_fold1.npz": "b8070c570fe565257ab0cbc7e590d461c71ad0f006ed46476ed7b88ba327aadb",
+        "oof_seed5_heldout_fold2.npz": "0ebc99bf0110bc480a06eb7ea597a58caf57f0af2e8f112b035bed2085499b6d",
+        "oof_seed5_heldout_fold3.npz": "37078ec52f661d808a5810fd0e749a2b64eeeb72cfe9bda49b23b517feef7278",
+        "oof_seed5_heldout_fold4.npz": "683d9a161b0a9559d96370dc33cb18b46fd542b1fb3f3e41ed5238284c0c27d6",
+        "oof_seed5_heldout_fold5.npz": "dcb2c158d239696537d0b1326f8d66e7e5136408b8faac97da30a307bafdd61d",
+        "oof_seed5_heldout_fold6.npz": "b8e1d466c5b3ec0b182b46babfe9703595cce095cfa3421e87821820e3ed6d11",
+        "oof_seed5_heldout_fold7.npz": "007cbeb68d27184134428c9729ae41e188dea6635acc3cd69ab30592e0d4210f",
+        "oof_seed5_heldout_fold8.npz": "7a041a5a90e52aafe7624f984759dbce1e138ffdc1ab0b71f3101249c3b4472b"
+      },
+      "training_thresholds": {
+        "equal@25%": 0.06227563382743292,
+        "sttc_weighted@25%": 0.06665391793406963,
+        "margin@25%": 2.114606261253357,
+        "equal@50%": 0.003544254966066727,
+        "sttc_weighted@50%": 0.004853539469783007,
+        "margin@50%": 0.9808610677719116,
+        "equal@75%": -0.11084501541281847,
+        "sttc_weighted@75%": -0.09740901588427087,
+        "margin@75%": 0.38539767265319824
+      },
+      "fold9_refit_vs_saved_pred_gain_max_abs": 0.0,
+      "fold9_threshold_switch_rates": {
+        "gate_eq_thr": 0.4720357941834452,
+        "gate_sttc_thr": 0.4569351230425056,
+        "margin_thr": 0.6168903803131991
+      },
+      "n_train_switchable": 14272
+    }
+  }
+}
