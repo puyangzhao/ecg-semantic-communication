@@ -1,5 +1,0 @@
-ada6a4b4228659cd51272188f21de563b3f1e5bb896badf0b7975771a9339aef  revision_audit/k1_gate_pilot/configs/gate_prespec.yaml
-4948d91be7af3ab82d9fac66c9681aa50a8b2d8231b0ba9b7f31632fba5490be  revision_audit/k1_gate_pilot/configs/phase2a_cpu.yaml
-2026-11-03T22:47:50-06:00
-# syntax-only fix (standardization key moved out of features list; text unchanged), applied before any gate result existed, 2026-11-03T23:26:35-06:00
-e40c92891bdbf2662f20af5e61bdc83aa274c25234ad936427928201e45cd924  gate_prespec.yaml
