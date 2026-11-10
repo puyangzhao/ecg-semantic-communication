@@ -1,7 +1,5 @@
 # Selecting and Transmitting ECG Information Under a Limited Wireless Budget
 
-**Puyang Zhao · Jingxi Zhao · Huiyun Zhang**
-
 Research code for selecting ECG lead representations and transmitting diagnostic information under a limited wireless budget.
 
 ![ECG selection and transmission](assets/overview.gif)
