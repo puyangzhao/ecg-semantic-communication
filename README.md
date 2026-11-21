@@ -28,6 +28,6 @@ The transmission training entry points are `scripts/train_phase2b_pilot.py` for 
 
 ## Citation
 
-P. Zhao, J. Zhao, and H. Zhang, “Selecting and Transmitting ECG Information Under a Limited Wireless Budget,” *IEEE Journal of Biomedical and Health Informatics*, accepted for publication.
+P. Zhao, J. Zhao and H. Zhang, "Selecting and Transmitting ECG Information Under a Limited Wireless Budget," in IEEE Journal of Biomedical and Health Informatics, doi: 10.1109/JBHI.2026.3755623. 
 
 Code is licensed under the [MIT License](LICENSE).
